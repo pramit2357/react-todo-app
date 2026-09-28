@@ -1,0 +1,227 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #eef2ff;
+  background: #090d18;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 18px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(97, 218, 251, 0.13), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(151, 103, 255, 0.15), transparent 30%),
+    #090d18;
+}
+
+.todo-card {
+  width: min(720px, 100%);
+  padding: 34px;
+  border: 1px solid rgba(151, 163, 190, 0.18);
+  border-radius: 24px;
+  background: rgba(18, 25, 40, 0.94);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #61dafb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(36px, 7vw, 56px);
+  line-height: 1;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: #9faec7;
+  font-size: 15px;
+}
+
+.count {
+  min-width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: #071018;
+  background: #61dafb;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+input {
+  width: 100%;
+  min-width: 0;
+  padding: 15px 16px;
+  border: 1px solid #3a465e;
+  border-radius: 12px;
+  outline: none;
+  color: #eef2ff;
+  background: #0d1321;
+}
+
+input:focus {
+  border-color: #61dafb;
+  box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.12);
+}
+
+.add-btn,
+.delete-btn,
+.check {
+  border: 0;
+  cursor: pointer;
+}
+
+.add-btn {
+  padding: 0 22px;
+  border-radius: 12px;
+  color: #071018;
+  background: #61dafb;
+  font-weight: 900;
+}
+
+.empty-state {
+  margin-top: 22px;
+  padding: 38px 20px;
+  text-align: center;
+  border: 1px dashed #3a465e;
+  border-radius: 16px;
+  background: #0d1321;
+}
+
+.empty-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #071018;
+  background: #4edc9a;
+  font-weight: 900;
+}
+
+.empty-state h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.empty-state p {
+  margin: 8px 0 0;
+  color: #8f9db5;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  border-radius: 14px;
+  background: #0d1321;
+  border: 1px solid #202b40;
+}
+
+.task span {
+  overflow-wrap: anywhere;
+}
+
+.check {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  color: #071018;
+  background: #26334b;
+}
+
+.check.checked {
+  background: #4edc9a;
+}
+
+.completed {
+  color: #77849b;
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  padding: 8px 12px;
+  border-radius: 9px;
+  color: #ff8b9c;
+  background: rgba(255, 100, 120, 0.09);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 18px;
+  color: #7f8da5;
+  font-size: 12px;
+}
+
+@media (max-width: 560px) {
+  .todo-card {
+    padding: 24px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .add-btn {
+    padding: 13px;
+  }
+
+  .task {
+    grid-template-columns: auto 1fr;
+  }
+
+  .delete-btn {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
